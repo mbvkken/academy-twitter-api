@@ -5,7 +5,7 @@ const { getTweets, createTweet, getUserByHandle } = require('./services/database
 const jwt = require('jsonwebtoken');
 const { authenticate } = require('./middleware');
 
-const port = 3334;
+const port = process.env.PORT;
 const secret = 'somethingverysecret1234';
 
 const app = express();

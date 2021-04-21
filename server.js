@@ -14,6 +14,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+    res.send({ message: 'hello from twitter api'})
+});
+
 app.get('/tweets', async (req, res) => {
     const tweets = await getTweets();
     res.send(tweets);

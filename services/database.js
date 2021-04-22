@@ -2,10 +2,15 @@ const { Pool } = require('pg');
 
 const database = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: {
+    ssl: process.env.IS_LOCAL ? undefined : {
         rejectUnauthorized: false
     }
 });
+
+// const databaseUrl = 'postgres://me:1234@localhost:5432/twitter'
+// const database = new Pool({
+//     connectionString: databaseUrl
+// });
 
 function getTweets() {
     return database.query(`

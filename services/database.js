@@ -39,7 +39,7 @@ function getTweetsByHandle(handle) {
           users.handle
         FROM 
           tweets
-        INNER JOIN users on
+        INNER JOIN users ON
           tweets.user_id = users.id
         WHERE
           users.handle = $1

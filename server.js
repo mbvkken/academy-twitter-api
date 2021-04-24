@@ -21,7 +21,7 @@ const app = express();
 
 const allowedOrigins = process.env.IS_LOCAL ?
 '*' :
-'https://academy-twitter-clone-frontend.herokuapp.com/';
+'https://academy-twitter-clone-frontend.herokuapp.com';
 
 app.use(cors({
     origin: allowedOrigins
